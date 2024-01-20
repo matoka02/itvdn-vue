@@ -1,26 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Header />
+  <CustomLayout>
+    <router-view />
+  </CustomLayout>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent } from "vue";
+import Header from '@/components/Header';
+import CustomLayout from '@/components/CustomLayout';
 
-export default {
+export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
+  // eslint-disable-next-line vue/no-reserved-component-names
+  components: { Header, CustomLayout },
+  setup() {
+    return {}
   }
-}
+})
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 </style>
